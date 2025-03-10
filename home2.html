@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastel Theme Navigation</title>
+    <link rel="stylesheet" href="/m7/style2.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <div class="logo-icon">P</div>
+          Pastel
+        </a>
+        
+        <div class="nav-links">
+          <a href="/about">About</a>
+          <a href="/locations">Locations</a>
+          <a href="/services">Services</a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="mobile-menu">
+    <button class="mobile-menu-close" aria-label="Close menu">×</button>
+    <a href="/about">About</a>
+    <a href="/locations">Locations</a>
+    <a href="/services">Services</a>
+  </div>
+  
+  <div class="overlay"></div>
+  
+  <div class="container">
+    <div class="hero">
+      <h1>Welcome to Pastel</h1>
+      <p>A beautiful site with warm, subtle pastels.</p>
+    </div>
+  </div>
+  
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    mobileMenuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>
